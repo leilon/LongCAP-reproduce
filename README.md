@@ -2,32 +2,18 @@
 
 ## Original OpenPMC
 ----------------------------------------------------------------------------------------
-
-[![code checks](https://github.com/VectorInstitute/aieng-template/actions/workflows/code_checks.yml/badge.svg)](https://github.com/VectorInstitute/pmc-data-extraction/actions/workflows/code_checks.yml)
-[![integration tests](https://github.com/VectorInstitute/aieng-template/actions/workflows/integration_tests.yml/badge.svg)](https://github.com/VectorInstitute/pmc-data-extraction/actions/workflows/integration_tests.yml)
-[![license](https://img.shields.io/github/license/VectorInstitute/aieng-template.svg)](https://github.com/VectorInstitute/pmc-data-extraction/blob/main/LICENSE.md)
-
-<div align="center">
-    <img src="https://github.com/VectorInstitute/pmc-data-extraction/blob/0a969136344a07267bb558d01f3fe76b36b93e1a/media/open-pmc-pipeline.png?raw=true" 
-     alt="Open-PMC Pipeline" 
-     width="1000" />
-</div>
-
-A toolkit to download, augment, and benchmark Open-PMC; a large dataset of image-text pairs extracted from open-access scientific articles on PubMedCentral.
-
-For more details, see the following resources:
 - **arXiv Paper:** [http://arxiv.org/abs/2503.14377](http://arxiv.org/abs/2503.14377)
 - **Dataset:** [https://huggingface.co/datasets/vector-institute/open-pmc](https://huggingface.co/datasets/vector-institute/open-pmc)
 - **Model Checkpoint:** [https://huggingface.co/vector-institute/open-pmc-clip](https://huggingface.co/vector-institute/open-pmc-clip)
 
-## Table of Contents
+### Table of Contents
 
 1. [Installing Dependencies](#installing-dependencies)
 2. [Download and Parse Image-Caption Pairs](#download-and-parse-image-caption-pairs-from-pubmed-articles)
 3. [Run Benchmarking Experiments](#run-benchmarking-experiments)
 4. [Citation](#citation)
 
-## Installing dependencies
+### Installing dependencies
 
 We use
 [poetry](https://python-poetry.org/docs/#installation)
@@ -95,7 +81,7 @@ python
 **Note:** Since these submodules (`mmlearn` and `open_clip`) are only part of the main branch in a single repository, if you change your branch to a branch where these submodules don't exist, your python interpretor won't be able to find these packages and you will face errors.
 
 
-## Download and parse image-caption pairs from Pubmed Articles
+### Download and parse image-caption pairs from Pubmed Articles
 The codebase used to download Pubmed articles and parse image-text pairs from them is stored in `openpmcvl/foundation`.
 This codebase heavily relies on [Build PMC-OA](https://github.com/WeixiongLin/Build-PMC-OA) codebase[[1]](#1).
 To download and parse articles with licenses that allow commercial use, run
@@ -117,7 +103,7 @@ python -u src/fetch_oa.py --num-retries 5 --extraction-dir path/to/download/dire
 ```
 
 
-## Run Benchmarking Experiments
+### Run Benchmarking Experiments
 We use `mmlearn` to run benchmarking experiments.
 Many experiments can be run with our dataset and `mmlearn`.
 A simple example of training with our dataset is given below:
@@ -156,7 +142,7 @@ For more comprehensive examples of shell scripts that run various experiments wi
 For more information about `mmlearn`, please refer to the package's [official codebase](https://github.com/VectorInstitute/mmlearn).
 
 
-## Citation
+### Citation
 If you find the code useful for your research, please consider citing
 ```bib
 @article{baghbanzadeh2025advancing,
